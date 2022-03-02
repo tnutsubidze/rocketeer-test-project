@@ -20,12 +20,12 @@
     font-weight: 400;
     line-height: 119px;
     text-align: center;
-    color: var(--color-red);
+    color: var(--color-text-red);
 }
 
 .start-btn {
-    background: var(--color-red);
-    color: var(--color-white);
+    background: var(--color-bg-red);
+    color: var(--color-text-white);
     border-radius: 50px;
     font-family: Montserrat, sans-serif;
     font-size: 24px;
@@ -48,7 +48,7 @@
     letter-spacing: 0;
     text-align: center;
     text-decoration: underline;
-    color: var(--color-white);
+    color: var(--color-text-white);
     display: block;
     margin: 36px 0 0;
 }
