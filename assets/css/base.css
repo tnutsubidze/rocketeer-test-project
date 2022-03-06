@@ -12,4 +12,50 @@ body {
     --color-bg-white: #FFFFFF;
     --color-bg-black: #000000;
     --color-grey: #525557;
+    --color-red: #FE3B1F;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button {
+    background: var(--color-bg-red);
+    color: var(--color-text-white);
+    border-radius: 50px;
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    text-align: center;
+    width: 395px;
+    padding: 20px 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.link {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: underline;
+    color: var(--color-text-white);
+    display: block;
+    margin: 36px 0 0;
+    cursor: pointer;
+}
+
+.page-title {
+    font-family: Rowdies, cursive;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119px;
+    text-align: center;
+    color: var(--color-text-red);
 }

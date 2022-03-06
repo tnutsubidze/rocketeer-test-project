@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rowdies&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./fragments/stepper/index.css">
+    <link rel="stylesheet" href="./fragments/skills/index.css">
+</head>
+<body>
+    <div class="questionaire-steps-container">
+        <div class="step">
+            <main class="container">
+                <section class="content left">
+                    <div class="form-steps-container">
+                        <div class="step">
+                            <h1 class="title left">Hey, Rocketeer, what are your coordinates?</h1>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title left">Tell us about your skills</h1>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title left">Covid Stuff</h1>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title left">What about you?</h1>
+                        </div>
+                    </div>
+
+                    <form autocomplete="off" id="questionaire-form">
+                        <div class="form-steps-container">
+                            <div class="step">
+                                <div class="form-container personal-info">
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <input name="first-name" class="input" type="text" placeholder="First Name" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <input name="last-name" class="input" type="text" placeholder="Last Name" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <input name="email" class="input" type="email" placeholder="E Mail" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <span class="prefix">+995 5</span>
+                                            <input name="phone" class="input" type="text" placeholder="__ __ __ __" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step hidden">
+                                <div class="form-container skills">
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <select name="selected-skill" class="input">
+                                                <option value>Skills</option>
+                                            </select>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <div class="field">
+                                            <input name="experience" class="input" type="number" placeholder="Experience Duration in Years" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <button id="add-skill-btn" type="button">Add Programming Language</button>
+
+                                    <div class="skills-container"></div>
+                                </div>
+                            </div>
+                            <div class="step hidden">
+                                <div class="form-container covid">
+                                    <div class="input-container">
+                                        <label class="label">How would you prefer to work?</label>
+                                        <div class="field radio">
+                                            <input name="work_preference" class="input" type="radio" value="office" />
+                                            <label class="label">From Sairme Office</label>
+                                        </div>
+                                        <div class="field radio">
+                                            <input name="work_preference" class="input" type="radio" value="home" />
+                                            <label class="label">From Home</label>
+                                        </div>
+                                        <div class="field radio">
+                                            <input name="work_preference" class="input" type="radio" value="hybrid" />
+                                            <label class="label">Hybrid</label>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                    <div class="input-container">
+                                        <label class="label">Did you contact covid 19? :(</label>
+                                        <div class="field radio">
+                                            <input name="had_covid" class="input" type="radio" value="yes" />
+                                            <label class="label">Yes</label>
+                                        </div>
+                                        <div class="field radio">
+                                            <input name="had_covid" class="input" type="radio" value="no" />
+                                            <label class="label">No</label>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container hidden">
+                                        <label class="label">When?</label>
+                                        <div class="field">
+                                            <input name="covid_date" class="input" type="date" placeholder="Date" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container">
+                                        <label class="label">Have you been vaccinated?</label>
+                                        <div class="field radio">
+                                            <input name="vaccinated" class="input" type="radio" value="yes" />
+                                            <label class="label">Yes</label>
+                                        </div>
+                                        <div class="field radio">
+                                            <input name="vaccinated" class="input" type="radio" value="no" />
+                                            <label class="label">No</label>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+
+                                    <div class="input-container hidden">
+                                        <label class="label">When did you get your last covid vaccine?</label>
+                                        <div class="field">
+                                            <input name="vaccine_date" class="input" type="date" placeholder="Date" />
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step hidden">
+                                <div class="form-container about">
+                                    <div class="input-container">
+                                        <label class="label">Would you attend Devtalks and maybe also organize your own?</label>
+                                        <div class="field radio">
+                                            <input name="attend_devtalks" class="input" type="radio" value="yes" />
+                                            <label class="label">Yes</label>
+                                        </div>
+                                        <div class="field radio">
+                                            <input name="attend_devtalks" class="input" type="radio" value="no" />
+                                            <label class="label">No</label>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                    <div class="input-container">
+                                        <label class="label">What would you speak about at Devtalk?</label>
+                                        <div class="field">
+                                            <textarea name="devtalk_topic" class="input" rows="4" placeholder="I would..."></textarea>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                    <div class="input-container">
+                                        <label class="label">Tell us something special</label>
+                                        <div class="field">
+                                            <textarea name="something_special" class="input" rows="3" placeholder="I..."></textarea>
+                                        </div>
+                                        <p class="error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    <div id="form-steps-indicators" class="stepper-container">
+                        <button class="stepper-btn left">
+                            <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9393 15.0607C11.5251 15.6464 12.4749 15.6464 13.0607 15.0607C13.6464 14.4749 13.6464 13.5251 13.0607 12.9393L10.9393 15.0607ZM9 11L7.93934 9.93934C7.35355 10.5251 7.35355 11.4749 7.93934 12.0607L9 11ZM13.0607 9.06066C13.6464 8.47487 13.6464 7.52513 13.0607 6.93934C12.4749 6.35355 11.5251 6.35355 10.9393 6.93934L13.0607 9.06066ZM3.5 11C3.5 6.85786 6.85786 3.5 11 3.5V0.5C5.20101 0.5 0.5 5.20101 0.5 11H3.5ZM11 3.5C15.1421 3.5 18.5 6.85786 18.5 11H21.5C21.5 5.20101 16.799 0.5 11 0.5V3.5ZM18.5 11C18.5 15.1421 15.1421 18.5 11 18.5V21.5C16.799 21.5 21.5 16.799 21.5 11H18.5ZM11 18.5C6.85786 18.5 3.5 15.1421 3.5 11H0.5C0.5 16.799 5.20101 21.5 11 21.5V18.5ZM13.0607 12.9393L10.0607 9.93934L7.93934 12.0607L10.9393 15.0607L13.0607 12.9393ZM10.0607 12.0607L13.0607 9.06066L10.9393 6.93934L7.93934 9.93934L10.0607 12.0607Z"/>
+                            </svg>
+                        </button>
+                        <span class="step-indicator selected"></span>
+                        <span class="step-indicator"></span>
+                        <span class="step-indicator"></span>
+                        <span class="step-indicator"></span>
+                        <span class="step-indicator"></span>
+                        <button class="stepper-btn right">
+                            <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.9393 15.0607C11.5251 15.6464 12.4749 15.6464 13.0607 15.0607C13.6464 14.4749 13.6464 13.5251 13.0607 12.9393L10.9393 15.0607ZM9 11L7.93934 9.93934C7.35355 10.5251 7.35355 11.4749 7.93934 12.0607L9 11ZM13.0607 9.06066C13.6464 8.47487 13.6464 7.52513 13.0607 6.93934C12.4749 6.35355 11.5251 6.35355 10.9393 6.93934L13.0607 9.06066ZM3.5 11C3.5 6.85786 6.85786 3.5 11 3.5V0.5C5.20101 0.5 0.5 5.20101 0.5 11H3.5ZM11 3.5C15.1421 3.5 18.5 6.85786 18.5 11H21.5C21.5 5.20101 16.799 0.5 11 0.5V3.5ZM18.5 11C18.5 15.1421 15.1421 18.5 11 18.5V21.5C16.799 21.5 21.5 16.799 21.5 11H18.5ZM11 18.5C6.85786 18.5 3.5 15.1421 3.5 11H0.5C0.5 16.799 5.20101 21.5 11 21.5V18.5ZM13.0607 12.9393L10.0607 9.93934L7.93934 12.0607L10.9393 15.0607L13.0607 12.9393ZM10.0607 12.0607L13.0607 9.06066L10.9393 6.93934L7.93934 9.93934L10.0607 12.0607Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                <section class="content right">
+                    <div class="form-steps-container">
+                        <div class="step">
+                            <h1 class="title">Redberry Origins</h1>
+                            <p class="description">You watch “What? Where? When?” Yeah. Our founders used to play it. That’s where they got a question about a famous American author and screenwriter Ray Bradbury. Albeit, our CEO Gaga Darsalia forgot the exact name and he answered Ray Redberry. And at that moment, a name for a yet to be born company was inspired - Redberry 😇</p>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title">A bit about our battles</h1>
+                            <p class="description">As we said, Redberry has been on the field for quite some time now, and we have touched and embraced a variety of programming languages, technologies, philosophies, and frameworks. We are battle-tested in PHP Laravel Stack with Vue.js, refined in React, and allies with Serverside technologies like Docker and Kubernetes, and now we have set foot in the web3 industry.</p>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title">Redberry Covid Policies</h1>
+                            <p class="description">As this infamous pandemic took over the world, we adjusted our working practices so that our employees can be as safe and comfortable as possible. We have a hybrid work environment, so you can either work from home or visit our lovely office on Sairme Street. If it was up to us, we would love you to see us in the office because we think face-to-face communications > Zoom meetings. Both on the fun and productivity scales.</p>
+                        </div>
+                        <div class="step hidden">
+                            <h1 class="title">Redberrian Insights</h1>
+                            <p class="description">We were soo much fun before the pandemic started! Parties almost every weekend and lavish employee birthday celebrations! Unfortunately, covid ruined that fun like it did almost everything else in the world. But we try our best to zhuzh it up a bit. For example, we host biweekly Devtalks where our senior and lead developers talk about topics they are passionate about. Previous topics have included Web3, NFT, Laravel 9, Kubernetes, etc. We hold these talks in the office but you can join our Zoom broadcast as well. Feel free to join either as an attendee or a speaker!</p>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+        <div class="step hidden">
+            <section class="page-container">
+                <div class="page-content">
+
+                    <button class="button submit-btn">Submit</button>
+
+                    <button class="link go-back-btn">Go back</button>
+
+                </div>
+            </section>
+        </div>
+        <div class="step hidden">
+            <section class="page-container">
+                <div class="page-content">
+
+
+                    <h1 class="page-title">Thanks for Joining 😊</h1>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/libphonenumber-js@1.9.49/bundle/libphonenumber-min.js"></script>
+<script type="module" src="./index.js"></script>
+</body>
+</html>

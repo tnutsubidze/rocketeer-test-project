@@ -1,0 +1,43 @@
+.stepper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 175px 0 0;
+}
+
+.step.hidden {
+    display: none;
+}
+
+.stepper-btn {
+    width: 22px;
+    height: 22px;
+}
+
+.stepper-btn svg {
+    fill: var(--color-bg-red);
+    image-rendering: crisp-edges;
+}
+
+
+
+.stepper-btn.right {
+    transform: rotateZ(180deg);
+}
+
+.stepper-btn, .step-indicator {
+    margin: 0 8px;
+}
+
+.step-indicator {
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    background: var(--color-bg-red);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.step-indicator.selected {
+    opacity: 1;
+}

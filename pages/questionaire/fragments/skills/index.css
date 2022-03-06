@@ -1,0 +1,48 @@
+#add-skill-btn {
+    background: var(--color-bg-red);
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--color-text-white);
+    padding: 10px;
+    margin: 22px 0 0 0;
+    width: 210px;
+    align-self: flex-end;
+}
+
+.skills-container {
+    margin: 40px 0 0;
+}
+
+.selected-skill {
+    border: 1px solid var(--color-grey);
+    display: flex;
+    padding: 10px;
+    margin: 15px 0 0;
+    align-items: center;
+}
+
+.selected-skill > .name,
+.selected-skill > .experience {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.selected-skill > .name {
+    width: 100px;
+}
+
+.remove-btn {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+}

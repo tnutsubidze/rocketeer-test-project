@@ -1,0 +1,194 @@
+.questionaire-steps-container {
+    width: 100%;
+    height: 100%;
+}
+
+.questionaire-steps-container > .step {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.content.left,
+.content.right {
+    width: 50%;
+}
+
+.content.left {
+    background: #FFFFFF;
+    padding: 110px 0 0;
+}
+
+.content.right {
+    padding: 110px 115px 0 175px;
+}
+
+.title {
+    font-family: Rowdies, cursive;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 79px;
+    color: var(--color-text-red);
+}
+
+.title.left {
+    text-align: center;
+    margin: 0 105px 130px;
+}
+
+.description {
+    color: var(--color-text-white);
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    margin-top: 145px;
+}
+
+.input[type="text"],
+.input[type="number"],
+.input[type="email"],
+.input[type="date"],
+select.input,
+textarea.input {
+    display: block;
+    padding: 18px;
+    font-family: Montserrat, cursive;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: left;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.input[type="radio"] {
+    display: inline-block;
+    appearance: auto;
+    background-color: var(--color-bg-white);
+    margin: 0;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color:  var(--color-grey);
+    border-image: initial;
+    cursor: pointer;
+}
+
+.input-container {
+    width: 100%;
+    position: relative;
+    margin: 40px 0 0;
+}
+
+.input-container.invalid > .field {
+    border-color: var(--color-red);
+}
+
+.input-container.invalid > .error {
+    display: block;
+}
+
+.input-container.hidden {
+    display: none;
+}
+
+.input-container > .label {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0 0 20px 0;
+    display: block;
+}
+
+.input-container > .field {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-grey);
+}
+
+.input-container > .field > .label {
+    margin: 0 0 0 10px;
+}
+
+.input-container > .field.radio {
+    border: none;
+    margin: 5px 0 0;
+}
+
+.input-container > .field > .prefix {
+    font-family: Montserrat, cursive;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0 0 0 18px;
+    white-space: nowrap;
+}
+
+.input-container > .field > .prefix + .input {
+    padding-left: 0;
+}
+
+.input-container > .error {
+    display: none;
+    position: absolute;
+    padding: 5px 0 0 18px;
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0;
+    text-align: left;
+    color: var(--color-text-red);
+}
+
+.input-container > .field.radio + .error {
+    padding-left: 0;
+}
+
+.input-container > .error::before {
+    content: '* '
+}
+
+.form-container {
+    display: flex;
+    width: 455px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.page-content {
+    width: 100%;
+    text-align: center;
+}
+
+.go-back-btn {
+    margin-left: auto;
+    margin-right: auto;
+}
