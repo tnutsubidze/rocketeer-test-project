@@ -1,6 +1,6 @@
 function createStepper(containerSelector, indicatorsContainerSelector) {
     const stepContainers = Array.from(document.querySelectorAll(containerSelector)).map((container) => {
-        return Array.from(container.children)
+        return Array.from(container.children);
     });
     const indicators = indicatorsContainerSelector ?
         document.querySelectorAll(`${indicatorsContainerSelector} .step-indicator`) : null;
@@ -14,19 +14,19 @@ function createStepper(containerSelector, indicatorsContainerSelector) {
         activateStep() {
             this.stepContainers.forEach((steps) => {
                 steps.forEach((step) => {
-                    step.classList.add('hidden')
-                })
+                    step.classList.add('hidden');
+                });
 
-                steps[this.activeStep].classList.remove('hidden')
-            })
+                steps[this.activeStep].classList.remove('hidden');
+            });
 
             this.indicators?.forEach((indicator, index) => {
-                indicator.classList.toggle('selected', index <= this.activeStep)
-            })
+                indicator.classList.toggle('selected', index <= this.activeStep);
+            });
 
             this.onActivateStepHooks.forEach((hook) => {
                 hook();
-            })
+            });
         },
         onActivateStepHooks: [],
         moveToNextStep() {
@@ -40,13 +40,13 @@ function createStepper(containerSelector, indicatorsContainerSelector) {
         onPrevBtnClick() {
             this.moveToPrevStep();
         }
-    }
+    };
 
     stepper.prevBtn?.addEventListener('click', () => {
         stepper.onPrevBtnClick();
-    })
+    });
 
     return stepper;
 }
 
-export default createStepper
+export default createStepper;

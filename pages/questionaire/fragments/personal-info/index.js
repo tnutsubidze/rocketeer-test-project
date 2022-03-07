@@ -1,12 +1,12 @@
-import { questionaireFormStepper } from '../steps';
-import { form } from "../form";
+import {questionaireFormStepper} from '../steps';
+import {form} from '../form';
 
 const validators = {
     'first-name': (value) => {
         if (!value) {
             return {
                 message: 'First name is required'
-            }
+            };
         }
 
         if (value && value.length >= 2) {
@@ -15,13 +15,13 @@ const validators = {
 
         return {
             message: 'First name must be at least 2 letters long'
-        }
+        };
     },
     'last-name': (value) => {
         if (!value) {
             return {
                 message: 'Last name is required'
-            }
+            };
         }
 
         if (value && value.length >= 2) {
@@ -30,13 +30,13 @@ const validators = {
 
         return {
             message: 'Last name must be at least 2 letters long'
-        }
+        };
     },
     'email': (value) => {
         if (!value) {
             return {
                 message: 'Email is required'
-            }
+            };
         }
 
         const isIncorrectFormat = !value.match(
@@ -49,7 +49,7 @@ const validators = {
 
         return {
             message: 'Email format is incorrect'
-        }
+        };
     },
     'phone': (value) => {
         if (!value) {
@@ -58,22 +58,22 @@ const validators = {
 
         const formatError = {
             message: 'Phone format is incorrect'
-        }
+        };
 
         try {
             const valueWithPrefix = '+9955' + value;
-            const parsedPhoneNumber = libphonenumber.parsePhoneNumber(valueWithPrefix)
+            const parsedPhoneNumber = libphonenumber.parsePhoneNumber(valueWithPrefix);
 
             if (parsedPhoneNumber && parsedPhoneNumber.country === 'GE' && parsedPhoneNumber.isValid()) {
                 return;
             }
 
-            return formatError
-        } catch(e) {
-            return formatError
+            return formatError;
+        } catch (e) {
+            return formatError;
         }
     }
-}
+};
 const personalInfoFormFragment = form.getFragment('.form-container.personal-info', validators);
 personalInfoFormFragment.registerFormEvents();
 
@@ -83,13 +83,13 @@ const onFormSubmit = () => {
     if (!isValid) return;
 
     questionaireFormStepper.moveToNextStep();
-}
+};
 
 
 questionaireFormStepper.onActivateStepHooks.push(() => {
     if (questionaireFormStepper.activeStep === 0) {
-        questionaireFormStepper.nextBtn.addEventListener('click', onFormSubmit)
+        questionaireFormStepper.nextBtn.addEventListener('click', onFormSubmit);
     } else {
-        questionaireFormStepper.nextBtn.removeEventListener('click', onFormSubmit)
+        questionaireFormStepper.nextBtn.removeEventListener('click', onFormSubmit);
     }
-})
+});

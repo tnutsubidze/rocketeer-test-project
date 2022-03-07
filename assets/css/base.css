@@ -8,11 +8,14 @@ body {
 :root {
     --color-text-red: #FE3B1F;
     --color-text-white: #FFFFFF;
+    --color-text-black: #000000;
+    --color-text-grey: #454545;
     --color-bg-red: #FE3B1F;
     --color-bg-white: #FFFFFF;
     --color-bg-black: #000000;
     --color-grey: #525557;
     --color-red: #FE3B1F;
+
 }
 
 button {

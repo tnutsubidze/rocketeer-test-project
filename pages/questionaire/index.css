@@ -80,9 +80,17 @@ textarea.input {
     padding: 1px 2px;
     border-width: 2px;
     border-style: inset;
-    border-color:  var(--color-grey);
+    border-color: var(--color-grey);
     border-image: initial;
     cursor: pointer;
+}
+
+.input[type="radio"]:disabled {
+    cursor: default;
+}
+
+.input:disabled {
+    color: var(--color-text-grey);
 }
 
 .input-container {
