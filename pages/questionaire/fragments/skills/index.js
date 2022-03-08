@@ -1,14 +1,14 @@
 import {questionaireFormStepper} from '../steps';
 import {form} from '../form';
 import {data} from '../data';
-import {API_BASE_URL} from '../../../../constants';
 import {api} from '../../../../api';
+import {formFields} from '../../constants';
 
 async function main() {
-    const skillsSelectEl = document.querySelector('.input[name="selected-skill"]');
+    const skillsSelectEl = document.querySelector(`.input[name="${formFields.SELECTED_SKILL}"]`);
     const addSkillBtn = document.querySelector('#add-skill-btn');
     const validators = {
-        'selected-skill': (value) => {
+        [formFields.SELECTED_SKILL]: (value) => {
             if (!value) {
                 return {
                     message: 'Skill is required'
@@ -21,7 +21,7 @@ async function main() {
                 };
             }
         },
-        'experience': (value) => {
+        [formFields.EXPERIENCE]: (value) => {
             if (!value) {
                 return {
                     message: 'Experience is required'
@@ -98,8 +98,8 @@ async function main() {
         if (!isValid) return;
 
         data.selectedSkills.push({
-            id: Number(formValues['selected-skill']),
-            experience: Number(formValues.experience)
+            id: Number(formValues[formFields.SELECTED_SKILL]),
+            experience: Number(formValues[formFields.EXPERIENCE])
         });
 
         skillsFormFragment.clearValues();

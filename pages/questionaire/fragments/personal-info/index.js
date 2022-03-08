@@ -1,8 +1,9 @@
 import {questionaireFormStepper} from '../steps';
 import {form} from '../form';
+import {formFields} from '../../constants';
 
 const validators = {
-    'first-name': (value) => {
+    [formFields.FIRST_NAME]: (value) => {
         if (!value) {
             return {
                 message: 'First name is required'
@@ -17,7 +18,7 @@ const validators = {
             message: 'First name must be at least 2 letters long'
         };
     },
-    'last-name': (value) => {
+    [formFields.LAST_NAME]: (value) => {
         if (!value) {
             return {
                 message: 'Last name is required'
@@ -32,7 +33,7 @@ const validators = {
             message: 'Last name must be at least 2 letters long'
         };
     },
-    'email': (value) => {
+    [formFields.EMAIL]: (value) => {
         if (!value) {
             return {
                 message: 'Email is required'
@@ -51,7 +52,7 @@ const validators = {
             message: 'Email format is incorrect'
         };
     },
-    'phone': (value) => {
+    [formFields.PHONE]: (value) => {
         if (!value) {
             return;
         }

@@ -1,16 +1,17 @@
 import {form} from '../form';
 import {questionaireFormStepper, questionaireStepper} from '../steps';
+import {formFields} from '../../constants';
 
 const aboutFormFragment = form.getFragment('.form-container.about', {
-    'attend_devtalks': (value) => {
+    [formFields.ATTEND_DEV_TALKS]: (value) => {
         if (!value) {
             return {
                 message: 'Information is required'
             };
         }
     },
-    'devtalk_topic': (value) => {
-        if (aboutFormFragment.getInput('attend_devtalks').getValue() !== 'yes') return;
+    [formFields.DEV_TALK_TOPIC]: (value) => {
+        if (aboutFormFragment.getInput(formFields.ATTEND_DEV_TALKS).getValue() !== 'yes') return;
 
         if (!value) {
             return {
@@ -18,7 +19,7 @@ const aboutFormFragment = form.getFragment('.form-container.about', {
             };
         }
     },
-    'something_special': (value) => {
+    [formFields.SOMETHING_SPECIAL]: (value) => {
         if (!value) {
             return {
                 message: 'Information is required'
@@ -28,7 +29,6 @@ const aboutFormFragment = form.getFragment('.form-container.about', {
 });
 aboutFormFragment.registerFormEvents();
 
-console.log(aboutFormFragment);
 const onFormSubmit = () => {
     const isValid = aboutFormFragment.validateForm();
 

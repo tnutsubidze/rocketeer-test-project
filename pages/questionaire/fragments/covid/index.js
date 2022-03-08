@@ -1,30 +1,31 @@
 import {form} from '../form';
 import {questionaireFormStepper} from '../steps';
+import {formFields} from '../../constants';
 
 const covidFormFragment = form.getFragment('.form-container.covid', {
-    'work_preference': (value) => {
+    [formFields.WORK_PREFERENCE]: (value) => {
         if (!value) {
             return {
                 message: 'Information is required'
             };
         }
     },
-    'had_covid': (value) => {
+    [formFields.HAD_COVID]: (value) => {
         if (!value) {
             return {
                 message: 'Information is required'
             };
         }
     },
-    'vaccinated': (value) => {
+    [formFields.VACCINATED]: (value) => {
         if (!value) {
             return {
                 message: 'Information is required'
             };
         }
     },
-    'covid_date': (value) => {
-        if (covidFormFragment.getInput('had_covid').getValue() !== 'yes') return;
+    [formFields.COVID_DATE]: (value) => {
+        if (covidFormFragment.getInput(formFields.HAD_COVID).getValue() !== 'yes') return;
 
         if (!value) {
             return {
@@ -32,8 +33,8 @@ const covidFormFragment = form.getFragment('.form-container.covid', {
             };
         }
     },
-    'vaccine_date': (value) => {
-        if (covidFormFragment.getInput('vaccinated').getValue() !== 'yes') return;
+    [formFields.VACCINE_DATE]: (value) => {
+        if (covidFormFragment.getInput(formFields.VACCINATED).getValue() !== 'yes') return;
 
         if (!value) {
             return {
@@ -43,10 +44,10 @@ const covidFormFragment = form.getFragment('.form-container.covid', {
     }
 });
 covidFormFragment.registerFormEvents();
-const covidInput = covidFormFragment.getInput('had_covid');
-const covidDateInput = covidFormFragment.getInput('covid_date');
-const vaccinatedInput = covidFormFragment.getInput('vaccinated');
-const vaccineDateInput = covidFormFragment.getInput('vaccine_date');
+const covidInput = covidFormFragment.getInput(formFields.HAD_COVID);
+const covidDateInput = covidFormFragment.getInput(formFields.COVID_DATE);
+const vaccinatedInput = covidFormFragment.getInput(formFields.VACCINATED);
+const vaccineDateInput = covidFormFragment.getInput(formFields.VACCINE_DATE);
 covidInput.registerChangeHandler(() => {
     covidDateInput.containerEl.classList.toggle('hidden', covidInput.getValue() === 'no');
 });
