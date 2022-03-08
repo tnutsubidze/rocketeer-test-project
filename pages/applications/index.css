@@ -12,7 +12,7 @@
 }
 
 .title {
-    color: var(--color-text-white)
+    color: var(--color-text-white);
     font-family: Rowdies, cursive;
     font-size: 56px;
     font-style: normal;

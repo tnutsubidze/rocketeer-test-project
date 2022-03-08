@@ -67,7 +67,7 @@ select.input,
 textarea.input {
     display: block;
     flex-grow: 1;
-    font-family: Montserrat, cursive;
+    font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
@@ -144,7 +144,7 @@ textarea.input {
 }
 
 .input-container > .field > .prefix {
-    font-family: Montserrat, cursive;
+    font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
