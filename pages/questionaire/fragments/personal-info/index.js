@@ -1,6 +1,6 @@
 import {questionaireFormStepper} from '../steps';
 import {form} from '../form';
-import {formFields} from '../../constants';
+import {formFields, PHONE_PREFIX} from '../../constants';
 
 const validators = {
     [formFields.FIRST_NAME]: (value) => {
@@ -62,7 +62,7 @@ const validators = {
         };
 
         try {
-            const valueWithPrefix = '+9955' + value;
+            const valueWithPrefix = PHONE_PREFIX + value;
             const parsedPhoneNumber = libphonenumber.parsePhoneNumber(valueWithPrefix);
 
             if (parsedPhoneNumber && parsedPhoneNumber.country === 'GE' && parsedPhoneNumber.isValid()) {

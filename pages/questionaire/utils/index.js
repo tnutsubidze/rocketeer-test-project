@@ -1,4 +1,4 @@
-import {boolText, formFields} from '../constants';
+import {boolText, formFields, PHONE_PREFIX} from '../constants';
 
 export const mapFormValuesToApiInput = (values) => {
     const workPreference = {
@@ -24,7 +24,7 @@ export const mapFormValuesToApiInput = (values) => {
     };
 
     if (values[formFields.PHONE]) {
-        data.phone = '+9955' + values[formFields.PHONE];
+        data.phone = PHONE_PREFIX + values[formFields.PHONE];
     }
 
     if (data.had_covid) {

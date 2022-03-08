@@ -19,3 +19,5 @@ export const boolText = {
     TRUE: 'yes',
     FALSE: 'no'
 }
+
+export const PHONE_PREFIX = '+9955';
