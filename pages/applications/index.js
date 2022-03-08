@@ -10,7 +10,7 @@ async function main() {
 
     console.log(applications, skillInfos);
 
-    applications.forEach((application) => {
+    applications.forEach((application, applicationIndex) => {
         const skillsContent = application.skills.map((skill) => {
             const skillInfo = skillInfos.find((skillInfo) => skillInfo.id === skill.id);
 
@@ -27,7 +27,7 @@ async function main() {
         applicationsContainerEl.innerHTML += `
             <div class="application">
                 <div class="application-header">
-                    <p class="application-title">1</p>
+                    <p class="application-title">${applicationIndex + 1}</p>
                     <svg class="application-arrow" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.01 7.425L12.02 1.415L10.607 0L6.01 4.6L1.414 0L0 1.414L6.01 7.425Z" fill="white"/>
                     </svg>
@@ -80,55 +80,62 @@ async function main() {
                             <div class="input-container">
                                 <label class="label">How would you prefer to work?</label>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="office" ${application.work_preference === apiWorkPreference.FROM_OFFICE ? 'checked' : ''} disabled/>
+                                    <input class="input" type="radio" value="office" ${application.work_preference === apiWorkPreference.FROM_OFFICE ? 'checked' : ''} disabled/>
                                     <label class="label">From Sairme Office</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="home" ${application.work_preference === apiWorkPreference.FROM_HOME ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="home" ${application.work_preference === apiWorkPreference.FROM_HOME ? 'checked' : ''} disabled />
                                     <label class="label">From Home</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="hybrid" ${application.work_preference === apiWorkPreference.HYBRID ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="hybrid" ${application.work_preference === apiWorkPreference.HYBRID ? 'checked' : ''} disabled />
                                     <label class="label">Hybrid</label>
                                 </div>
                             </div>
                             <div class="input-container">
                                 <label class="label">Did you have covid 19? :(</label>
                                 <div class="field radio">
-                                    <input name="had_covid" class="input" type="radio" value="yes" ${application.had_covid ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="yes" ${application.had_covid ? 'checked' : ''} disabled />
                                     <label class="label">Yes</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="had_covid" class="input" type="radio" value="no" ${!application.had_covid ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="no" ${!application.had_covid ? 'checked' : ''} disabled />
                                     <label class="label">No</label>
                                 </div>
                             </div>
-
-                            <div class="input-container">
-                                <label class="label">When did you have covid 19?</label>
-                                <div class="field">
-                                    <input name="covid_date" class="input" type="date" placeholder="Date" value="${application.had_covid_at}" disabled />
-                                </div>
-                            </div>
+                            
+                            ${application.had_covid ? (
+                                `<div class="input-container">
+                                    <label class="label">When did you have covid 19?</label>
+                                    <div class="field">
+                                        <input class="input" type="date" placeholder="Date"
+                                               value="${application.had_covid_at}" disabled/>
+                                    </div>
+                                </div>`  
+                            ) : ''}
+                            
 
                             <div class="input-container">
                                 <label class="label">Have you been vaccinated?</label>
                                 <div class="field radio">
-                                    <input name="vaccinated" class="input" type="radio" value="yes" ${application.vaccinated ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="yes" ${application.vaccinated ? 'checked' : ''} disabled />
                                     <label class="label">Yes</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="vaccinated" class="input" type="radio" value="no" ${!application.vaccinated ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="no" ${!application.vaccinated ? 'checked' : ''} disabled />
                                     <label class="label">No</label>
                                 </div>
                             </div>
 
-                            <div class="input-container">
-                                <label class="label">When did you get covid vaccine?</label>
-                                <div class="field">
-                                    <input name="covid_date" class="input" type="date" placeholder="Date" value="${application.vaccinated_at}" disabled />
-                                </div>
-                            </div>
+                            ${application.vaccinated ? (
+                                `<div class="input-container">
+                                    <label class="label">When did you get covid vaccine?</label>
+                                    <div class="field">
+                                        <input class="input" type="date" placeholder="Date" value="${application.vaccinated_at}" disabled />
+                                    </div>
+                                </div>`
+                            ) : ''}
+                            
                         </div>
                     </div>
 
@@ -139,11 +146,11 @@ async function main() {
                             <div class="input-container">
                                 <label class="label">Would you attend Devtalks and maybe also organize your own?</label>
                                 <div class="field radio">
-                                    <input name="attend_devtalks" class="input" type="radio" value="yes" ${application.will_organize_devtalk ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="yes" ${application.will_organize_devtalk ? 'checked' : ''} disabled />
                                     <label class="label">Yes</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="attend_devtalks" class="input" type="radio" value="no" ${!application.will_organize_devtalk ? 'checked' : ''} disabled />
+                                    <input class="input" type="radio" value="no" ${!application.will_organize_devtalk ? 'checked' : ''} disabled />
                                     <label class="label">No</label>
                                 </div>
                                 <p class="error"></p>
@@ -151,14 +158,14 @@ async function main() {
                             <div class="input-container">
                                 <label class="label">What would you speak about at Devtalk?</label>
                                 <div class="field">
-                                    <textarea name="devtalk_topic" class="input" rows="4" disabled>${application.devtalk_topic}</textarea>
+                                    <textarea class="input" rows="4" disabled>${application.devtalk_topic}</textarea>
                                 </div>
                                 <p class="error"></p>
                             </div>
                             <div class="input-container">
                                 <label class="label">Tell us something special</label>
                                 <div class="field">
-                                    <textarea name="something_special" class="input" rows="3" disabled>${application.something_special}</textarea>
+                                    <textarea class="input" rows="3" disabled>${application.something_special}</textarea>
                                 </div>
                                 <p class="error"></p>
                             </div>
