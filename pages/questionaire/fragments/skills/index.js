@@ -2,7 +2,7 @@ import {questionaireFormStepper} from '../steps';
 import {form} from '../form';
 import {data} from '../data';
 import {api} from '../../../../api';
-import {formFields} from '../../constants';
+import {formFields, questionaireFormSteps} from '../../constants';
 
 async function main() {
     const skillsSelectEl = document.querySelector(`.input[name="${formFields.SELECTED_SKILL}"]`);
@@ -75,7 +75,7 @@ async function main() {
 
     skillsFormFragment.registerFormEvents();
     questionaireFormStepper.onActivateStepHooks.push(() => {
-        if (questionaireFormStepper.activeStep === 1) {
+        if (questionaireFormStepper.activeStep === questionaireFormSteps.SKILLS) {
             questionaireFormStepper.nextBtn.addEventListener('click', onFormSubmit);
         } else {
             questionaireFormStepper.nextBtn.removeEventListener('click', onFormSubmit);

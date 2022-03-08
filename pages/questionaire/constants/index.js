@@ -27,3 +27,16 @@ export const apiWorkPreference = {
     FROM_OFFICE: 'from_office',
     HYBRID: 'hybrid'
 };
+
+export const questionaireSteps = {
+    QUESTIONAIRE: 0,
+    SUBMIT: 1,
+    THANK_YOU: 2
+}
+
+export const questionaireFormSteps = {
+    PERSONAL_INFO: 0,
+    SKILLS: 1,
+    COVID: 2,
+    ABOUT: 3
+}

@@ -1,6 +1,6 @@
 import {form} from '../form';
 import {questionaireFormStepper, questionaireStepper} from '../steps';
-import {boolText, formFields} from '../../constants';
+import {boolText, formFields, questionaireFormSteps} from '../../constants';
 
 const aboutFormFragment = form.getFragment('.form-container.about', {
     [formFields.ATTEND_DEV_TALKS]: (value) => {
@@ -39,7 +39,7 @@ const onFormSubmit = () => {
 
 
 questionaireFormStepper.onActivateStepHooks.push(() => {
-    if (questionaireFormStepper.activeStep === 3) {
+    if (questionaireFormStepper.activeStep === questionaireFormSteps.ABOUT) {
         questionaireFormStepper.nextBtn.addEventListener('click', onFormSubmit);
     } else {
         questionaireFormStepper.nextBtn.removeEventListener('click', onFormSubmit);

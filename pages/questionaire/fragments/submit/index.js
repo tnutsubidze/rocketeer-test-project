@@ -4,6 +4,7 @@ import {data} from '../data';
 import {mapFormValuesToApiInput, mapSelectedSkillsToApiInput} from '../../utils';
 import {API_TOKEN} from '../../../../constants';
 import {api} from '../../../../api';
+import {questionaireSteps} from '../../constants';
 
 const submitBtn = document.querySelector('.submit-btn');
 const goBackBtn = document.querySelector('.go-back-btn');
@@ -25,7 +26,7 @@ goBackBtn.addEventListener('click', () => {
 });
 
 questionaireStepper.onActivateStepHooks.push(() => {
-    if (questionaireStepper.activeStep === 2) {
+    if (questionaireStepper.activeStep === questionaireSteps.THANK_YOU) {
         setTimeout(() => {
             window.location.href = '../../index.html';
         }, 3000);

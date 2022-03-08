@@ -1,6 +1,6 @@
 import {questionaireFormStepper} from '../steps';
 import {form} from '../form';
-import {formFields, PHONE_PREFIX} from '../../constants';
+import {formFields, PHONE_PREFIX, questionaireFormSteps} from '../../constants';
 
 const validators = {
     [formFields.FIRST_NAME]: (value) => {
@@ -88,7 +88,7 @@ const onFormSubmit = () => {
 
 
 questionaireFormStepper.onActivateStepHooks.push(() => {
-    if (questionaireFormStepper.activeStep === 0) {
+    if (questionaireFormStepper.activeStep === questionaireFormSteps.PERSONAL_INFO) {
         questionaireFormStepper.nextBtn.addEventListener('click', onFormSubmit);
     } else {
         questionaireFormStepper.nextBtn.removeEventListener('click', onFormSubmit);
