@@ -1,4 +1,4 @@
-import {formFields} from '../constants';
+import {boolText, formFields} from '../constants';
 
 export const mapFormValuesToApiInput = (values) => {
     const workPreference = {
@@ -17,9 +17,9 @@ export const mapFormValuesToApiInput = (values) => {
             };
         }),
         work_preference: workPreference[values[formFields.WORK_PREFERENCE]],
-        had_covid: values[formFields.HAD_COVID] === 'yes',
-        vaccinated: values[formFields.VACCINATED] === 'yes',
-        will_organize_devtalk: values[formFields.ATTEND_DEV_TALKS] === 'yes',
+        had_covid: values[formFields.HAD_COVID] === boolText.TRUE,
+        vaccinated: values[formFields.VACCINATED] === boolText.TRUE,
+        will_organize_devtalk: values[formFields.ATTEND_DEV_TALKS] === boolText.TRUE,
         something_special: values[formFields.SOMETHING_SPECIAL]
     };
 

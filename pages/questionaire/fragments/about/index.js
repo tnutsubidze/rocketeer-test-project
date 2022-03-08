@@ -1,6 +1,6 @@
 import {form} from '../form';
 import {questionaireFormStepper, questionaireStepper} from '../steps';
-import {formFields} from '../../constants';
+import {boolText, formFields} from '../../constants';
 
 const aboutFormFragment = form.getFragment('.form-container.about', {
     [formFields.ATTEND_DEV_TALKS]: (value) => {
@@ -11,7 +11,7 @@ const aboutFormFragment = form.getFragment('.form-container.about', {
         }
     },
     [formFields.DEV_TALK_TOPIC]: (value) => {
-        if (aboutFormFragment.getInput(formFields.ATTEND_DEV_TALKS).getValue() !== 'yes') return;
+        if (aboutFormFragment.getInput(formFields.ATTEND_DEV_TALKS).getValue() !== boolText.TRUE) return;
 
         if (!value) {
             return {

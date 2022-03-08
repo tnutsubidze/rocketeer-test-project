@@ -14,3 +14,8 @@ export const formFields = {
     DEV_TALK_TOPIC: 'dev_talk_topic',
     SOMETHING_SPECIAL: 'something_special',
 }
+
+export const boolText = {
+    TRUE: 'yes',
+    FALSE: 'no'
+}

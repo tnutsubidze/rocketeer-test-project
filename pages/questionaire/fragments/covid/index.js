@@ -1,6 +1,6 @@
 import {form} from '../form';
 import {questionaireFormStepper} from '../steps';
-import {formFields} from '../../constants';
+import {boolText, formFields} from '../../constants';
 
 const covidFormFragment = form.getFragment('.form-container.covid', {
     [formFields.WORK_PREFERENCE]: (value) => {
@@ -25,7 +25,7 @@ const covidFormFragment = form.getFragment('.form-container.covid', {
         }
     },
     [formFields.COVID_DATE]: (value) => {
-        if (covidFormFragment.getInput(formFields.HAD_COVID).getValue() !== 'yes') return;
+        if (covidFormFragment.getInput(formFields.HAD_COVID).getValue() !== boolText.TRUE) return;
 
         if (!value) {
             return {
@@ -34,7 +34,7 @@ const covidFormFragment = form.getFragment('.form-container.covid', {
         }
     },
     [formFields.VACCINE_DATE]: (value) => {
-        if (covidFormFragment.getInput(formFields.VACCINATED).getValue() !== 'yes') return;
+        if (covidFormFragment.getInput(formFields.VACCINATED).getValue() !== boolText.TRUE) return;
 
         if (!value) {
             return {
@@ -49,10 +49,10 @@ const covidDateInput = covidFormFragment.getInput(formFields.COVID_DATE);
 const vaccinatedInput = covidFormFragment.getInput(formFields.VACCINATED);
 const vaccineDateInput = covidFormFragment.getInput(formFields.VACCINE_DATE);
 covidInput.registerChangeHandler(() => {
-    covidDateInput.containerEl.classList.toggle('hidden', covidInput.getValue() === 'no');
+    covidDateInput.containerEl.classList.toggle('hidden', covidInput.getValue() === boolText.FALSE);
 });
 vaccinatedInput.registerChangeHandler(() => {
-    vaccineDateInput.containerEl.classList.toggle('hidden', vaccinatedInput.getValue() === 'no');
+    vaccineDateInput.containerEl.classList.toggle('hidden', vaccinatedInput.getValue() === boolText.FALSE);
 });
 
 
