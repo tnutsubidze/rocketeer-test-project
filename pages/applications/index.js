@@ -8,8 +8,6 @@ async function main() {
     const applicationsContainerEl = document.querySelector('.applications-container');
     applicationsContainerEl.innerHTML = '';
 
-    console.log(applications, skillInfos);
-
     applications.forEach((application, applicationIndex) => {
         const skillsContent = application.skills.map((skill) => {
             const skillInfo = skillInfos.find((skillInfo) => skillInfo.id === skill.id);
@@ -58,11 +56,9 @@ async function main() {
                             <p class="info-label">
                                 Phone
                             </p>
-                            ${application.phone ? (
-            `<p class="info-value">
-                                    ${application.phone}
-                                </p>`
-        ) : ''}
+                            <p class="info-value">
+                                ${application.phone ? application.phone : 'n/a'}
+                            </p>
                         </div>
                     </div>
                     <div>
@@ -158,7 +154,7 @@ async function main() {
                             <div class="input-container">
                                 <label class="label">What would you speak about at Devtalk?</label>
                                 <div class="field">
-                                    <textarea class="input" rows="4" disabled>${application.devtalk_topic}</textarea>
+                                    <textarea class="input" rows="4" disabled>${application.devtalk_topic ? application.devtalk_topic : 'n/a'}</textarea>
                                 </div>
                                 <p class="error"></p>
                             </div>
