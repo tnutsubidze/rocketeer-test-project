@@ -13,12 +13,12 @@ export const formFields = {
     ATTEND_DEV_TALKS: 'attend_dev_talks',
     DEV_TALK_TOPIC: 'dev_talk_topic',
     SOMETHING_SPECIAL: 'something_special',
-}
+};
 
 export const boolText = {
     TRUE: 'yes',
     FALSE: 'no'
-}
+};
 
 export const PHONE_PREFIX = '+9955';
 
@@ -32,11 +32,11 @@ export const questionaireSteps = {
     QUESTIONAIRE: 0,
     SUBMIT: 1,
     THANK_YOU: 2
-}
+};
 
 export const questionaireFormSteps = {
     PERSONAL_INFO: 0,
     SKILLS: 1,
     COVID: 2,
     ABOUT: 3
-}
+};

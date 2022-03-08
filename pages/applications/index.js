@@ -105,14 +105,14 @@ async function main() {
                             </div>
                             
                             ${application.had_covid ? (
-                                `<div class="input-container">
+            `<div class="input-container">
                                     <label class="label">When did you have covid 19?</label>
                                     <div class="field">
                                         <input class="input" type="date" placeholder="Date"
                                                value="${application.had_covid_at}" disabled/>
                                     </div>
-                                </div>`  
-                            ) : ''}
+                                </div>`
+        ) : ''}
                             
 
                             <div class="input-container">
@@ -128,13 +128,13 @@ async function main() {
                             </div>
 
                             ${application.vaccinated ? (
-                                `<div class="input-container">
+            `<div class="input-container">
                                     <label class="label">When did you get covid vaccine?</label>
                                     <div class="field">
                                         <input class="input" type="date" placeholder="Date" value="${application.vaccinated_at}" disabled />
                                     </div>
                                 </div>`
-                            ) : ''}
+        ) : ''}
                             
                         </div>
                     </div>

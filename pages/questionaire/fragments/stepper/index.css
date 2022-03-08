@@ -1,7 +1,7 @@
 .stepper-container {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
     margin: 175px 0 0;
 }
 
@@ -10,8 +10,8 @@
 }
 
 .stepper-btn {
-    width: 22px;
     height: 22px;
+    width: 22px;
 }
 
 .stepper-btn svg {
@@ -29,12 +29,12 @@
 }
 
 .step-indicator {
-    width: 19px;
-    height: 19px;
-    display: inline-block;
     background: var(--color-bg-red);
-    opacity: 0.1;
     border-radius: 50%;
+    display: inline-block;
+    height: 19px;
+    opacity: 0.1;
+    width: 19px;
 }
 
 .step-indicator.selected {

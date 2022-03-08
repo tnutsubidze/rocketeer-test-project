@@ -4,19 +4,19 @@
 @import './fragments/skills/index.css';
 
 .questionaire-steps-container {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .questionaire-steps-container > .step {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .container {
-    width: 100%;
-    height: 100%;
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .content.left,
@@ -34,17 +34,17 @@
 }
 
 .title {
+    color: var(--color-text-red);
     font-family: Rowdies, cursive;
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
     line-height: 79px;
-    color: var(--color-text-red);
 }
 
 .title.left {
-    text-align: center;
     margin: 0 105px 130px;
+    text-align: center;
 }
 
 .description {
@@ -53,10 +53,10 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 48px;
     letter-spacing: 0.05em;
-    text-align: left;
+    line-height: 48px;
     margin-top: 145px;
+    text-align: left;
 }
 
 .input[type="text"],
@@ -66,28 +66,28 @@
 select.input,
 textarea.input {
     display: block;
-    padding: 18px;
+    flex-grow: 1;
     font-family: Montserrat, cursive;
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
     line-height: 17px;
+    padding: 18px;
     text-align: left;
     width: 100%;
-    flex-grow: 1;
 }
 
 .input[type="radio"] {
-    display: inline-block;
     appearance: auto;
     background-color: var(--color-bg-white);
-    margin: 0;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
     border-color: var(--color-grey);
     border-image: initial;
+    border-style: inset;
+    border-width: 2px;
     cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    padding: 1px 2px;
 }
 
 .input[type="radio"]:disabled {
@@ -99,9 +99,9 @@ textarea.input {
 }
 
 .input-container {
-    width: 100%;
-    position: relative;
     margin: 40px 0 0;
+    position: relative;
+    width: 100%;
 }
 
 .input-container.invalid > .field {
@@ -117,21 +117,21 @@ textarea.input {
 }
 
 .input-container > .label {
+    display: block;
     font-family: Montserrat, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
     letter-spacing: 0em;
-    text-align: left;
+    line-height: 22px;
     margin: 0 0 20px 0;
-    display: block;
+    text-align: left;
 }
 
 .input-container > .field {
-    display: flex;
     align-items: center;
     border: 1px solid var(--color-grey);
+    display: flex;
 }
 
 .input-container > .field > .label {
@@ -148,10 +148,10 @@ textarea.input {
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
-    line-height: 17px;
     letter-spacing: 0em;
-    text-align: left;
+    line-height: 17px;
     margin: 0 0 0 18px;
+    text-align: left;
     white-space: nowrap;
 }
 
@@ -160,17 +160,17 @@ textarea.input {
 }
 
 .input-container > .error {
+    color: var(--color-text-red);
     display: none;
-    position: absolute;
-    padding: 5px 0 0 18px;
     font-family: Montserrat, sans-serif;
     font-size: 11px;
     font-style: italic;
     font-weight: 400;
-    line-height: 13px;
     letter-spacing: 0;
+    line-height: 13px;
+    padding: 5px 0 0 18px;
+    position: absolute;
     text-align: left;
-    color: var(--color-text-red);
 }
 
 .input-container > .field.radio + .error {
@@ -183,22 +183,22 @@ textarea.input {
 
 .form-container {
     display: flex;
-    width: 455px;
-    margin: 0 auto;
     flex-direction: column;
+    margin: 0 auto;
+    width: 455px;
 }
 
 .page-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
     position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .page-content {
-    width: 100%;
     text-align: center;
+    width: 100%;
 }
 
 .go-back-btn {

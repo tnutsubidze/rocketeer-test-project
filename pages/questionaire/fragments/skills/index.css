@@ -1,17 +1,17 @@
 #add-skill-btn {
+    align-self: flex-end;
     background: var(--color-bg-red);
+    color: var(--color-text-white);
     font-family: Montserrat, sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 15px;
     letter-spacing: 0;
-    text-align: center;
-    color: var(--color-text-white);
-    padding: 10px;
+    line-height: 15px;
     margin: 22px 0 0 0;
+    padding: 10px;
+    text-align: center;
     width: 210px;
-    align-self: flex-end;
 }
 
 .skills-container {
@@ -19,11 +19,11 @@
 }
 
 .selected-skill {
+    align-items: center;
     border: 1px solid var(--color-grey);
     display: flex;
-    padding: 10px;
     margin: 15px 0 0;
-    align-items: center;
+    padding: 10px;
 }
 
 .selected-skill > .name,
@@ -32,8 +32,8 @@
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
-    line-height: 17px;
     letter-spacing: 0;
+    line-height: 17px;
     text-align: left;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .remove-btn {
-    width: 20px;
     height: 20px;
     margin-left: auto;
+    width: 20px;
 }

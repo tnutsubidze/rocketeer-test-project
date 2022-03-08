@@ -3,23 +3,23 @@
 @import '../questionaire/index.css';
 
 .container {
+    background: #0C0D0E;
+    display: block;
+    height: 100%;
+    padding: 50px 100px;
     position: relative;
     width: 100%;
-    height: 100%;
-    background: #0C0D0E;
-    padding: 50px 100px;
-    display: block;
 }
 
 .title {
+    color: var(--color-text-white)
     font-family: Rowdies, cursive;
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
-    line-height: 70px;
     letter-spacing: 0.11em;
+    line-height: 70px;
     text-align: left;
-    color: var(--color-text-white)
 }
 
 .content {
@@ -31,21 +31,21 @@
 }
 
 .application-header {
-    padding: 10px 20px;
+    align-items: center;
     background: var(--color-bg-red);
     display: flex;
-    align-items: center;
+    padding: 10px 20px;
 }
 
 .application-title {
+    color: var(--color-text-white);
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 17px;
     letter-spacing: 0;
+    line-height: 17px;
     text-align: left;
-    color: var(--color-text-white);
 }
 
 .application-arrow {
@@ -66,52 +66,52 @@
 }
 
 .application-grid {
+    column-gap: 30px;
     display: grid;
     grid-template-columns: 50% 50%;
-    column-gap: 30px;
     row-gap: 50px;
 }
 
 .info-grid {
+    column-gap: 30px;
     display: grid;
     grid-template-columns: 100px auto;
-    column-gap: 30px;
     row-gap: 20px;
 }
 
 .info-title {
+    color: var(--color-text-red);
     font-family: Montserrat, sans-serif;
     font-size: 18px;
     font-style: italic;
     font-weight: 400;
-    line-height: 22px;
     letter-spacing: 0;
-    text-align: left;
-    color: var(--color-text-red);
-    text-decoration: underline;
+    line-height: 22px;
     margin: 0 0 20px 0;
+    text-align: left;
+    text-decoration: underline;
 }
 
 .info-label {
+    color: var(--color-text-black);
     font-family: Montserrat, sans-serif;
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
-    line-height: 15px;
     letter-spacing: 0;
+    line-height: 15px;
     text-align: left;
-    color: var(--color-text-black);
 }
 
 .info-value {
+    color: var(--color-text-black);
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
-    line-height: 17px;
     letter-spacing: 0;
+    line-height: 17px;
     text-align: left;
-    color: var(--color-text-black);
 }
 
 .form-container {
