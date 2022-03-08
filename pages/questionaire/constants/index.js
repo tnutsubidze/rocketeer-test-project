@@ -21,3 +21,9 @@ export const boolText = {
 }
 
 export const PHONE_PREFIX = '+9955';
+
+export const apiWorkPreference = {
+    FROM_HOME: 'from_home',
+    FROM_OFFICE: 'from_office',
+    HYBRID: 'hybrid'
+};

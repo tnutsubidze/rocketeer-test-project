@@ -1,22 +1,16 @@
-import {boolText, formFields, PHONE_PREFIX} from '../constants';
+import {apiWorkPreference, boolText, formFields, PHONE_PREFIX} from '../constants';
 
 export const mapFormValuesToApiInput = (values) => {
-    const workPreference = {
-        'home': 'from_home',
-        'office': 'from_office',
-        'hybrid': 'hybrid'
+    const workPreferenceMap = {
+        'home': apiWorkPreference.FROM_HOME,
+        'office': apiWorkPreference.FROM_OFFICE,
+        'hybrid': apiWorkPreference.HYBRID,
     };
     const data = {
         first_name: values[formFields.FIRST_NAME],
         last_name: values[formFields.LAST_NAME],
         email: values[formFields.EMAIL],
-        skills: values.selectedSkills.map((selectedSkill) => {
-            return {
-                id: selectedSkill.id,
-                experience: selectedSkill.experience
-            };
-        }),
-        work_preference: workPreference[values[formFields.WORK_PREFERENCE]],
+        work_preference: workPreferenceMap[values[formFields.WORK_PREFERENCE]],
         had_covid: values[formFields.HAD_COVID] === boolText.TRUE,
         vaccinated: values[formFields.VACCINATED] === boolText.TRUE,
         will_organize_devtalk: values[formFields.ATTEND_DEV_TALKS] === boolText.TRUE,
@@ -40,4 +34,15 @@ export const mapFormValuesToApiInput = (values) => {
     }
 
     return data;
+};
+
+export const mapSelectedSkillsToApiInput = (selectedSkills) => {
+    return {
+        skills: selectedSkills.map((selectedSkill) => {
+            return {
+                id: selectedSkill.id,
+                experience: selectedSkill.experience
+            };
+        })
+    };
 };

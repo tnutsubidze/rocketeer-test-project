@@ -1,7 +1,7 @@
 import {form} from '../form';
 import {questionaireStepper} from '../steps';
 import {data} from '../data';
-import {mapFormValuesToApiInput} from '../../utils';
+import {mapFormValuesToApiInput, mapSelectedSkillsToApiInput} from '../../utils';
 import {API_TOKEN} from '../../../../constants';
 import {api} from '../../../../api';
 
@@ -10,10 +10,8 @@ const goBackBtn = document.querySelector('.go-back-btn');
 
 submitBtn.addEventListener('click', async () => {
     const apiData = {
-        ...mapFormValuesToApiInput({
-            ...form.getValues(),
-            selectedSkills: data.selectedSkills
-        }),
+        ...mapFormValuesToApiInput(form.getValues()),
+        ...mapSelectedSkillsToApiInput(data.selectedSkills),
         token: API_TOKEN,
     };
 

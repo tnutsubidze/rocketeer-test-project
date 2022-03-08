@@ -1,5 +1,6 @@
 import {API_BASE_URL, API_TOKEN} from '../../constants';
 import {api} from '../../api';
+import {apiWorkPreference} from '../questionaire/constants';
 
 async function main() {
     const skillInfos = await api.getSkills();
@@ -79,15 +80,15 @@ async function main() {
                             <div class="input-container">
                                 <label class="label">How would you prefer to work?</label>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="office" ${application.work_preference === 'from_office' ? 'checked' : ''} disabled/>
+                                    <input name="work_preference" class="input" type="radio" value="office" ${application.work_preference === apiWorkPreference.FROM_OFFICE ? 'checked' : ''} disabled/>
                                     <label class="label">From Sairme Office</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="home" ${application.work_preference === 'from_home' ? 'checked' : ''} disabled />
+                                    <input name="work_preference" class="input" type="radio" value="home" ${application.work_preference === apiWorkPreference.FROM_HOME ? 'checked' : ''} disabled />
                                     <label class="label">From Home</label>
                                 </div>
                                 <div class="field radio">
-                                    <input name="work_preference" class="input" type="radio" value="hybrid" ${application.work_preference === 'hybrid' ? 'checked' : ''} disabled />
+                                    <input name="work_preference" class="input" type="radio" value="hybrid" ${application.work_preference === apiWorkPreference.HYBRID ? 'checked' : ''} disabled />
                                     <label class="label">Hybrid</label>
                                 </div>
                             </div>
