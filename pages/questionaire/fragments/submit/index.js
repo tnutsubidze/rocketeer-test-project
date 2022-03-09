@@ -1,10 +1,10 @@
-import {form} from '../form';
-import {questionaireStepper} from '../steps';
-import {data} from '../data';
-import {mapFormValuesToApiInput, mapSelectedSkillsToApiInput} from '../../utils';
-import {API_TOKEN} from '../../../../constants';
-import {api} from '../../../../api';
-import {questionaireSteps} from '../../constants';
+import {form} from '../form/index.js';
+import {questionaireStepper} from '../steps/index.js';
+import {data} from '../data/index.js';
+import {mapFormValuesToApiInput, mapSelectedSkillsToApiInput} from '../../utils/index.js';
+import {API_TOKEN} from '../../../../constants/index.js';
+import {api} from '../../../../api/index.js';
+import {questionaireSteps} from '../../constants/index.js';
 
 const submitBtn = document.querySelector('.submit-btn');
 const goBackBtn = document.querySelector('.go-back-btn');

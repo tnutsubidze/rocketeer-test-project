@@ -1,6 +1,6 @@
-import {form} from '../form';
-import {questionaireFormStepper} from '../steps';
-import {boolText, formFields, questionaireFormSteps} from '../../constants';
+import {form} from '../form/index.js';
+import {questionaireFormStepper} from '../steps/index.js';
+import {boolText, formFields, questionaireFormSteps} from '../../constants/index.js';
 
 const covidFormFragment = form.getFragment('.form-container.covid', {
     [formFields.WORK_PREFERENCE]: (value) => {

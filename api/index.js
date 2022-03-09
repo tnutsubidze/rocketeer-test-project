@@ -1,4 +1,4 @@
-import {API_BASE_URL, API_TOKEN} from '../constants';
+import {API_BASE_URL, API_TOKEN} from '../constants/index.js';
 
 export const api = {
     getSkills() {

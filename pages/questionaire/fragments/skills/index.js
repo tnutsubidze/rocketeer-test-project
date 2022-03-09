@@ -1,8 +1,8 @@
-import {questionaireFormStepper} from '../steps';
-import {form} from '../form';
-import {data} from '../data';
-import {api} from '../../../../api';
-import {formFields, questionaireFormSteps} from '../../constants';
+import {questionaireFormStepper} from '../steps/index.js';
+import {form} from '../form/index.js';
+import {data} from '../data/index.js';
+import {api} from '../../../../api/index.js';
+import {formFields, questionaireFormSteps} from '../../constants/index.js';
 
 async function main() {
     const skillsSelectEl = document.querySelector(`.input[name="${formFields.SELECTED_SKILL}"]`);

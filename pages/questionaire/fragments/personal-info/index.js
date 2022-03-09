@@ -1,6 +1,6 @@
-import {questionaireFormStepper} from '../steps';
-import {form} from '../form';
-import {formFields, PHONE_PREFIX, questionaireFormSteps} from '../../constants';
+import {questionaireFormStepper} from '../steps/index.js';
+import {form} from '../form/index.js';
+import {formFields, PHONE_PREFIX, questionaireFormSteps} from '../../constants/index.js';
 
 const validators = {
     [formFields.FIRST_NAME]: (value) => {

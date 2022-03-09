@@ -1,6 +1,5 @@
-import {API_BASE_URL, API_TOKEN} from '../../constants';
-import {api} from '../../api';
-import {apiWorkPreference} from '../questionaire/constants';
+import {api} from '../../api/index.js';
+import {apiWorkPreference} from '../questionaire/constants/index.js';
 
 async function main() {
     const skillInfos = await api.getSkills();

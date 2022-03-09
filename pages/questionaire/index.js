@@ -1,9 +1,9 @@
-import {questionaireStepper, questionaireFormStepper} from './fragments/steps';
-import './fragments/personal-info';
-import './fragments/skills';
-import './fragments/covid';
-import './fragments/about';
-import './fragments/submit';
+import {questionaireStepper, questionaireFormStepper} from './fragments/steps/index.js';
+import './fragments/personal-info/index.js';
+import './fragments/skills/index.js';
+import './fragments/covid/index.js';
+import './fragments/about/index.js';
+import './fragments/submit/index.js';
 
 questionaireStepper.activateStep();
 questionaireFormStepper.activateStep();

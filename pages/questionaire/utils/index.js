@@ -1,4 +1,4 @@
-import {apiWorkPreference, boolText, formFields, PHONE_PREFIX} from '../constants';
+import {apiWorkPreference, boolText, formFields, PHONE_PREFIX} from '../constants/index.js';
 
 export const mapFormValuesToApiInput = (values) => {
     const workPreferenceMap = {

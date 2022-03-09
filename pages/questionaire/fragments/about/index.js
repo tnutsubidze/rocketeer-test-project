@@ -1,6 +1,6 @@
-import {form} from '../form';
-import {questionaireFormStepper, questionaireStepper} from '../steps';
-import {boolText, formFields, questionaireFormSteps} from '../../constants';
+import {form} from '../form/index.js';
+import {questionaireFormStepper, questionaireStepper} from '../steps/index.js';
+import {boolText, formFields, questionaireFormSteps} from '../../constants/index.js';
 
 const aboutFormFragment = form.getFragment('.form-container.about', {
     [formFields.ATTEND_DEV_TALKS]: (value) => {
